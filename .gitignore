@@ -1,0 +1,15 @@
+# Exported Files
+data.csv
+data.json
+
+# Node Data Files
+logs
+*.log
+pids
+*.pid
+*.seed
+lib-cov
+.grunt
+.lock-wscript
+build/Release
+node_modules
