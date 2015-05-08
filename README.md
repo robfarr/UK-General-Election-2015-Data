@@ -4,17 +4,11 @@ The results of the 2015 UK General Election are finally in and have revealed an 
 
 
 This Node.js application scrapes the data from each of the 650 constituencies from the BBC News’ election website and produces data files containing each candidate, including:
-
 * the constituency that they campaigned in;
-
 * the party that they represented (or other);
-
 * the candidate’s name;
-
 * the number of votes for the candidate;
-
 * the percentage share of the total votes in the constituency;
-
 * and the percentage change in the number of votes for the candidate (or party if a new candidate is standing for an existing party).
 
 
@@ -22,9 +16,7 @@ The data takes the same order as the BBC news website - ordered first by constit
 
 
 The application exports the data in two formats:
-
 * a JSON file - data.json
-
 * a CSV file - data.csv
 
 
