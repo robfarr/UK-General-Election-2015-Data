@@ -3,7 +3,7 @@
 The results of the 2015 UK General Election are finally in and have revealed an unpredicted 12-seat Conservative majority, placing them almost 100 seats ahead of the Labour party.
 
 
-This Node.js application scrapes the data from each of the 650 constituencies from the BBC News’ election website and produces data files containing each candidate, including:
+This Node.js application scrapes the data from each of the 650 constituencies from the BBC News election website and produces data files containing each candidate, including:
 * the constituency that they campaigned in;
 * the party that they represented (or other);
 * the candidate’s name;
