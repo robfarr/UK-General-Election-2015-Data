@@ -75,8 +75,8 @@ function LoadConstituencyData(ConstituencyID, Callback){
 			
 			var candidate = {
 				constituency: constituency,
-				party: $(this).find(".party__name--long").text().replace(/\'/g, ''),
-				name: $(this).find(".party__result--candidate").text().replace(/\'/g, ''),
+				party: $(this).find(".party__name--long").text().replace(/('|")/g, ''),
+				name: $(this).find(".party__result--candidate").text().replace(/('|")/g, ''),
 				votes: $(this).find(".party__result--votes").text().replace(/,/g, ''),
 				share: $(this).find(".party__result--votesshare").text(),
 				change: $(this).find(".party__result--votesnet").text()
@@ -107,12 +107,12 @@ function WriteCSV(){
 
 		for(var i=0, candidate; candidate = Candidates[i]; i++){
 
-			stream.write("'" + candidate.constituency + "',");
-			stream.write("'" + candidate.party + "',");
-			stream.write("'" + candidate.name + "',");
-			stream.write("'" + candidate.votes + "',");
-			stream.write("'" + candidate.share + "',");
-			stream.write("'" + candidate.change);
+			stream.write("\"" + candidate.constituency + "\",");
+			stream.write("\"" + candidate.party + "\",");
+			stream.write("\"" + candidate.name + "\",");
+			stream.write("\"" + candidate.votes + "\",");
+			stream.write("\"" + candidate.share + "\",");
+			stream.write("\"" + candidate.change);
 
 			if(i < Candidates.length-1){
 				stream.write("\n");
