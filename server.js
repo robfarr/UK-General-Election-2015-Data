@@ -75,8 +75,8 @@ function LoadConstituencyData(ConstituencyID, Callback){
 			
 			var candidate = {
 				constituency: constituency,
-				party: $(this).find(".party__name--long").text().replace(/('|")/g, ''),
-				name: $(this).find(".party__result--candidate").text().replace(/('|")/g, ''),
+				party: $(this).find(".party__name--long").text().replace(/('|"|,)/g, ''),
+				name: $(this).find(".party__result--candidate").text().replace(/('|"|,)/g, ''),
 				votes: $(this).find(".party__result--votes").text().replace(/,/g, ''),
 				share: $(this).find(".party__result--votesshare").text(),
 				change: $(this).find(".party__result--votesnet").text()
