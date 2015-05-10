@@ -69,12 +69,13 @@ function LoadConstituencyData(ConstituencyID, Callback){
 		var $ = cheerio.load(html);
 
 		$(".off-screen").remove();
-		var constituency = $(".constituency-title__title").text();
+		var constituencyname = $(".constituency-title__title").text();
 
 		$(".party").each(function(i, element){
 			
 			var candidate = {
-				constituency: constituency,
+				constituencyid: ConstituencyID,
+				constituencyname: constituencyname,
 				party: $(this).find(".party__name--long").text().replace(/('|")/g, ''),
 				name: $(this).find(".party__result--candidate").text().replace(/('|")/g, ''),
 				votes: $(this).find(".party__result--votes").text().replace(/,/g, ''),
@@ -82,9 +83,9 @@ function LoadConstituencyData(ConstituencyID, Callback){
 				change: $(this).find(".party__result--votesnet").text()
 			}
 			
-			if(candidate['constituency'] !== "" && candidate['party'] !== "" && candidate['name'] !== "" && candidate['votes'] !== "" && candidate['share'] !== "" && candidate['change'] !== ""){
+			if(candidate['constituencyid'] !== "" && candidate['constituencyname'] !== "" && candidate['party'] !== "" && candidate['name'] !== "" && candidate['votes'] !== "" && candidate['share'] !== "" && candidate['change'] !== ""){
 				Candidates.push(candidate);
-				console.log("OK! Parsed candidate " + candidate.constituency + "\\" + candidate.name);
+				console.log("OK! Parsed candidate " + candidate.constituencyname + "\\" + candidate.name);
 			}
 
 		});
@@ -103,11 +104,12 @@ function WriteCSV(){
 	var stream = fs.createWriteStream("data.csv");
 	stream.once("open", function(fd){
 
-		stream.write("constituency,party,name,votes,share,change\n");
+		stream.write("constituencyid,constituencyname,party,name,votes,share,change\n");
 
 		for(var i=0, candidate; candidate = Candidates[i]; i++){
 
-			stream.write("\"" + candidate.constituency + "\",");
+			stream.write("\"" + candidate.constituencyid + "\",");
+			stream.write("\"" + candidate.constituencyname + "\",");
 			stream.write("\"" + candidate.party + "\",");
 			stream.write("\"" + candidate.name + "\",");
 			stream.write("\"" + candidate.votes + "\",");
