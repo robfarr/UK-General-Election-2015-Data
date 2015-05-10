@@ -1,0 +1,15 @@
+{
+
+	"name": "BBC-Election-Data-Scraper",
+	"description": "Scraps the BBC's election data of the 2015 UK general election.",
+	"author": "Rob Farr",
+
+	"main": "server.js",
+	"version": "1.0.1",
+
+	"dependencies": {
+		"request": "latest",
+		"cheerio": "latest"
+	}
+
+}
