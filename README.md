@@ -15,9 +15,10 @@ This Node.js application scrapes the data from each of the 650 constituencies fr
 The data takes the same order as the BBC news website - ordered first by constituency alphabetically, followed by the number of votes that each candidate received in the constituency.
 
 
-The application exports the data in two formats:
+The application exports the data into three formats:
 * a JSON file - data.json
 * a CSV file - data.csv
+* a SQLite3 database - data.sqlite
 
 
 Please check the [usage guide](https://github.com/robfarr/UK-General-Election-2015-Data/wiki/Usage-Guide) for help using this application.

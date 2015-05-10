@@ -9,7 +9,8 @@
 
 	"dependencies": {
 		"request": "latest",
-		"cheerio": "latest"
+		"cheerio": "latest",
+		"sqlite3": "latest"
 	}
 
 }
