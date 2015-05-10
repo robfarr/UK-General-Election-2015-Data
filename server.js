@@ -114,7 +114,7 @@ function WriteCSV(){
 			stream.write("\"" + candidate.name + "\",");
 			stream.write("\"" + candidate.votes + "\",");
 			stream.write("\"" + candidate.share + "\",");
-			stream.write("\"" + candidate.change);
+			stream.write("\"" + candidate.change + "\"");
 
 			if(i < Candidates.length-1){
 				stream.write("\n");
